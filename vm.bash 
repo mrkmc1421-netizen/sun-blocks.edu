@@ -1,0 +1,52 @@
+#!/bin/bash
+set -e
+
+echo "=== SunBlocks VM Initialization ==="
+
+# Update system
+sudo apt update
+sudo apt upgrade -y
+
+# Install dependencies
+sudo apt install -y python3 python3-pip git build-essential
+
+# Create SunBlocks user
+sudo useradd -m -s /bin/bash sunblocks || true
+
+# Create directories
+sudo mkdir -p /opt/sunblocks
+sudo mkdir -p /var/log/sunblocks
+sudo chown -R sunblocks:sunblocks /opt/sunblocks /var/log/sunblocks
+
+# Pull SunBlocks engine (placeholder repo)
+sudo -u sunblocks git clone https://example.com/sunblocks.git /opt/sunblocks
+
+# Install SunBlocks
+cd /opt/sunblocks
+sudo -u sunblocks pip3 install -r requirements.txt || true
+sudo -u sunblocks python3 setup.py install || true
+
+# Create systemd service
+sudo tee /etc/systemd/system/sunblocks.service > /dev/null <<EOF
+[Unit]
+Description=SunBlocks Engine
+After=network.target
+
+[Service]
+User=sunblocks
+WorkingDirectory=/opt/sunblocks
+ExecStart=/usr/bin/python3 /opt/sunblocks/main.py
+Restart=always
+StandardOutput=append:/var/log/sunblocks/output.log
+StandardError=append:/var/log/sunblocks/error.log
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+# Enable service
+sudo systemctl daemon-reload
+sudo systemctl enable sunblocks.service
+sudo systemctl start sunblocks.service
+
+echo "=== SunBlocks VM Ready ==="

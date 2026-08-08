@@ -81,3 +81,18 @@ document.getElementById("publishBtn").addEventListener("click", () => {
 
   alert("Project published!");
 });
+function generateThumbnail() {
+  const canvas = document.createElement("canvas");
+  canvas.width = 300;
+  canvas.height = 200;
+  const ctx = canvas.getContext("2d");
+
+  ctx.fillStyle = "#ffd86b";
+  ctx.fillRect(0, 0, 300, 200);
+
+  ctx.fillStyle = "#333";
+  ctx.font = "20px Comic Sans MS";
+  ctx.fillText("SunBlocks Project", 40, 100);
+
+  return canvas.toDataURL();
+}

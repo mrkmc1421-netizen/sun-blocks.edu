@@ -1,0 +1,49 @@
+body {
+  font-family: "Comic Sans MS", sans-serif;
+  background: linear-gradient(#ffe9a6, #ffd36b);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #ffcc4d;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#editor {
+  display: flex;
+  height: calc(100vh - 80px);
+}
+
+#palette {
+  width: 35%;
+  background: #fff7c2;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+#workspace {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+}
+
+.block {
+  background: #ffd86b;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 10px;
+  cursor: grab;
+  box-shadow: 0 3px #e0c45f;
+}
+
+#dropZone {
+  background: #f0f0f0;
+  height: 90%;
+  border-radius: 10px;
+  padding: 10px;
+  overflow-y: auto;
+}

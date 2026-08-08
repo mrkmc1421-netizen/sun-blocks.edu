@@ -1,0 +1,11 @@
+#extList {
+  padding: 20px;
+}
+
+.extension {
+  background: #fff7c2;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 12px;
+  box-shadow: 0 3px #e0d48a;
+}

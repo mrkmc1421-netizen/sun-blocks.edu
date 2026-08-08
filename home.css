@@ -59,3 +59,9 @@ button:hover {
   margin-bottom: 10px;
   object-fit: cover;
 }
+const params = new URLSearchParams(window.location.search);
+const sharedID = params.get("project");
+
+if (sharedID !== null) {
+  window.location.href = `projectview.html?id=${sharedID}`;
+}

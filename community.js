@@ -26,3 +26,16 @@ projects.forEach((proj, index) => {
 
   grid.appendChild(card);
 });
+const badges = getBadges(proj, projects);
+
+const badgeHTML = badges
+  .map(b => `<span class="badge">${b}</span>`)
+  .join("");
+
+card.innerHTML = `
+  <img class="thumbnail" src="${proj.thumbnail || 'defaultthumb.png'}">
+  <h3>${proj.name}</h3>
+  <p>By ${proj.author}</p>
+  <div class="badges">${badgeHTML}</div>
+  <button data-id="${index}">Open</button>
+`;

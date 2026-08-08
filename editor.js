@@ -96,3 +96,10 @@ function generateThumbnail() {
 
   return canvas.toDataURL();
 }
+const remixData = JSON.parse(localStorage.getItem("sunblocksRemixBuffer") || "null");
+
+if (remixData) {
+  loadProject(remixData);
+  localStorage.removeItem("sunblocksRemixBuffer");
+  alert("Remix loaded!");
+}

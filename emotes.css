@@ -1,0 +1,17 @@
+.emote-inline {
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+}
+
+#emotePicker {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.emote-icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}

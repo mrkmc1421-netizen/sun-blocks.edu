@@ -30,3 +30,6 @@ projects.forEach((proj, index) => {
 
   grid.appendChild(card);
 });
+document.getElementById("friendsBtn").addEventListener("click", () => {
+  window.location.href = "friends.html";
+});

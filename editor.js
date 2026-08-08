@@ -55,3 +55,29 @@ function loadProject(data) {
     dropZone.appendChild(div);
   });
 }
+document.getElementById("publishBtn").addEventListener("click", () => {
+  const blocks = [...dropZone.querySelectorAll(".block")].map(b => b.innerHTML);
+
+  const name = prompt("Project name:");
+  const author = prompt("Your name:");
+
+  const thumbnail = generateThumbnail();
+
+  const project = {
+    name,
+    author,
+    blocks,
+    thumbnail,
+    likes: 0,
+    comments: [],
+    created: Date.now(),
+    featured: false,
+    inReview: false
+  };
+
+  const projects = JSON.parse(localStorage.getItem("sunblocksCommunity") || "[]");
+  projects.push(project);
+  localStorage.setItem("sunblocksCommunity", JSON.stringify(projects));
+
+  alert("Project published!");
+});

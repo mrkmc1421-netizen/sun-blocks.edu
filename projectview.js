@@ -73,3 +73,12 @@ document.getElementById("shareBtn").addEventListener("click", () => {
 
   alert("Link copied! SunBlocks is a project made by Mr KMC");
 });
+document.getElementById("remixBtn").addEventListener("click", () => {
+  const remixData = {
+    blocks: project.blocks,
+    remixOf: id
+  };
+
+  localStorage.setItem("sunblocksRemixBuffer", JSON.stringify(remixData));
+  window.location.href = "editor.html";
+});

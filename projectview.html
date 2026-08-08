@@ -14,3 +14,9 @@
 
   <div id="commentsList"></div>
 </div>
+const badgeBox = document.getElementById("badgeBox");
+const badges = getBadges(project, projects);
+
+badgeBox.innerHTML = badges
+  .map(b => `<span class="badge">${b}</span>`)
+  .join("");

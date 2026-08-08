@@ -33,3 +33,7 @@ projects.forEach((proj, index) => {
 document.getElementById("friendsBtn").addEventListener("click", () => {
   window.location.href = "friends.html";
 });
+
+document.getElementById("settingsBtn").addEventListener("click", () => {
+  window.location.href = "settings.html";
+});

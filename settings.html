@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SunBlocks Settings ⚙️</title>
+  <link rel="stylesheet" href="settings.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>⚙️ Settings</h1>
+  </header>
+
+  <button id="backBtn">⬅️ Back</button>
+
+  <div class="section">
+    <h2>🔒 Lock Account</h2>
+    <p>Prevent changes to your profile and settings.</p>
+    <button id="lockBtn">Lock Account</button>
+    <p id="lockStatus"></p>
+  </div>
+
+  <div class="section">
+    <h2>🌞 About Installing Extensions</h2>
+    <p>Extensions add new blocks and features to SunBlocks.</p>
+    <button id="extInfoBtn">Learn More</button>
+  </div>
+
+  <div class="section locked">
+    <h2>📜 Terms of Service (Locked)</h2>
+    <p>This section is locked. Only viewable through the TOS page.</p>
+    <button id="tosBtn">View TOS</button>
+  </div>
+
+  <script src="settings.js"></script>
+</body>
+</html>

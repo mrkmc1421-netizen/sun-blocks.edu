@@ -56,3 +56,20 @@ SBEmotes.forEach(emote => {
   });
   picker.appendChild(img);
 });
+const id = new URLSearchParams(window.location.search).get("id");
+
+// Build shareable link
+const shareURL =
+  `https://mrkmc1421-netizen.github.io/sun-blocks.edu/?project=${id}`;
+
+document.getElementById("shareLink").value = shareURL;
+
+// Copy link on click
+document.getElementById("shareBtn").addEventListener("click", () => {
+  const input = document.getElementById("shareLink");
+  input.select();
+  input.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(input.value);
+
+  alert("Link copied! SunBlocks is a project made by Mr KMC");
+});

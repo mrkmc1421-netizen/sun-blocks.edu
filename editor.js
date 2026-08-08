@@ -25,3 +25,33 @@ dropZone.addEventListener("drop", e => {
   div.innerHTML = name;
   dropZone.appendChild(div);
 });
+document.getElementById("uploadBtn").addEventListener("click", () => {
+  const input = document.createElement("input");
+  input.type = "file";
+  input.accept = ".sunblocks";
+
+  input.onchange = e => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      const data = JSON.parse(reader.result);
+      loadProject(data);
+      alert("Project uploaded!");
+    };
+
+    reader.readAsText(file);
+  };
+
+  input.click();
+});
+
+function loadProject(data) {
+  dropZone.innerHTML = "";
+  data.blocks.forEach(b => {
+    const div = document.createElement("div");
+    div.className = "block";
+    div.innerHTML = b;
+    dropZone.appendChild(div);
+  });
+}

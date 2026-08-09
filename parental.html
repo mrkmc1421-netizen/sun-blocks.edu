@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SunBlocks Parental Controls 🛡️</title>
+  <link rel="stylesheet" href="parental.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>🛡️ Parental Controls</h1>
+  </header>
+
+  <button id="backBtn">⬅️ Back</button>
+
+  <div class="section">
+    <h2>🔑 Parent PIN</h2>
+    <input id="pinInput" placeholder="Enter PIN">
+    <button id="setPinBtn">Set PIN</button>
+    <p id="pinStatus"></p>
+  </div>
+
+  <div class="section">
+    <h2>🚫 Restrictions</h2>
+
+    <label><input type="checkbox" id="restrictExtensions"> Disable Extensions</label><br>
+    <label><input type="checkbox" id="restrictRemix"> Disable Remixing</label><br>
+    <label><input type="checkbox" id="restrictComments"> Disable Comments</label><br>
+    <label><input type="checkbox" id="restrictFriends"> Disable Friends List</label><br>
+    <label><input type="checkbox" id="restrictPublish"> Disable Publishing</label><br>
+  </div>
+
+  <div class="section">
+    <h2>🌈 Kid‑Safe Mode</h2>
+    <label><input type="checkbox" id="kidSafe"> Enable Kid‑Safe Mode</label>
+  </div>
+
+  <script src="parental.js"></script>
+</body>
+</html>

@@ -29,3 +29,6 @@ document.getElementById("extInfoBtn").addEventListener("click", () => {
 document.getElementById("tosBtn").addEventListener("click", () => {
   window.location.href = "tos.html";
 });
+document.getElementById("parentalBtn").addEventListener("click", () => {
+  window.location.href = "parental.html";
+});
